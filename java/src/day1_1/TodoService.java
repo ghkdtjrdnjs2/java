@@ -31,7 +31,13 @@ public class TodoService {
 	}
 
 	// 할일 변경
-	public void change() {
-
+	public long change(Long tno) {
+		for(Todo t:list) {
+			if(t.getTno()==tno) {
+				t.setFinish(!t.getFinish());
+				return 1L;
+			}
+		}
+		return 0L;
 	}
 }
